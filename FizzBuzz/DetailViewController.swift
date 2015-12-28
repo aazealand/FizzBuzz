@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
+    //comments!!!!!!!!!
 
     var detailItem: AnyObject? {
         didSet {
