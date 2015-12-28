@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
     //comments!!!!!!!!!
-
+    //comments galore....
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
