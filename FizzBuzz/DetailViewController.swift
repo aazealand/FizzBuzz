@@ -14,6 +14,9 @@ class DetailViewController: UIViewController {
 
     //comments!!!!!!!!!
     //comments galore....
+    
+
+    
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
@@ -33,6 +36,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.configureView()
     }
 

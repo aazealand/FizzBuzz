@@ -10,6 +10,7 @@ import UIKit
 
 //Comment, just to make a change.
 //2nd Comment, just to make a change.
+//More comments.
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
@@ -40,12 +41,22 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(sender: AnyObject) {
+        let alertController = UIAlertController(title: "Add Set", message: "Type the name of your new set", preferredStyle: .ActionSheet)
+        
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        alertController.addAction(OKAction)
+        
+        self.presentViewController(alertController, animated:true){}
+        
         objects.insert(NSDate(), atIndex: 0)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
+    
+
 
     // MARK: - Segues
+    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
@@ -72,6 +83,8 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
+        //let object = objects[indexPath.row] as! NSDate
+        //cell.textLabel!.text = object.description
         let object = objects[indexPath.row] as! NSDate
         cell.textLabel!.text = object.description
         return cell
