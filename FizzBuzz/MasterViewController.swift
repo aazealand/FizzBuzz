@@ -41,7 +41,14 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(sender: AnyObject) {
-        let alertController = UIAlertController(title: "Add Set", message: "Type the name of your new set", preferredStyle: .ActionSheet)
+        let alertController = UIAlertController(title: "Add Set", message: "Type the name of your new set", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alertController.addTextFieldWithConfigurationHandler { textField -> Void in
+            textField.placeholder = "Set Name"
+        }
+        
+        let CancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil)
+        alertController.addAction(CancelAction)
         
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
         alertController.addAction(OKAction)
